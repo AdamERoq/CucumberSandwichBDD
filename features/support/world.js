@@ -4,6 +4,15 @@ const Fibonacci = require("../../Fibonacci");
 class CustomWorld {
     constructor() {
         this.fibonacci = new Fibonacci();
+        this.thrown = false;
+    }
+
+    hasThrown() {
+        return this.thrown;
+    }
+
+    itTrew() {
+        this.thrown = true;
     }
 }
 

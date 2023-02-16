@@ -21,6 +21,24 @@ Given("a fibonacci sequence initialized to {int}", function(value) {
     this.fibonacci.init(value);
 });
 
+Given("a fibonacci sequence to an illegitimate initialized number {int}", function(value) {
+    try {
+        this.fibonacci.init(value);
+    } catch {
+        this.itTrew();
+    }
+
+});
+
+Given("a fibonacci sequence initialized to {float}", function(value) {
+    try {
+        this.fibonacci.init(value);
+    } catch {
+        this.itTrew();
+    }
+
+});
+
 When("a fibonacci sequence is started", function() {
     // Nothing to do, as done by the custom world
 });
@@ -35,4 +53,8 @@ Then("the next number should be {int}", function(value) {
 
 Then("the state should be {string}", function(value) {
     assert(this.fibonacci.state() == value);
+});
+
+Then("it will throw an exception", function() {
+    assert(this.hasThrown());
 });
