@@ -34,18 +34,18 @@ Given("a fibonacci sequence is started", function() {
     // Nothing to do, as done by the custom world
 });
 
-Given("a fibonacci sequence initialized to {float}", function(value) {
+Given("a fibonacci sequence initialized with a float integra to {float}", function(float) {
     try {
-        this.fibonacci.init(value);
+        this.fibonacci.init(float);
     } catch {
         this.itTrew();
     }
 
 });
 
-When("a fibonacci sequence is started", function() {
+//When("a fibonacci sequence is started", function() {
     // Nothing to do, as done by the custom world
-});
+//});
 
 When("the sequence is skipped {int} time(s)", function(value) {
     this.fibonacci.skip(value);
@@ -56,7 +56,7 @@ Then("the next number should be {int}", function(value) {
 });
 
 Then("the state should be {string}", function(value) {
-    assert(this.fibonacci.current() == value);
+    assert(this.fibonacci.state() == value);
 });
 
 Then("it will throw an exception", function() {
