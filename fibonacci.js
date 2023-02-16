@@ -17,6 +17,11 @@ class Fibonacci {
         // Return the Fibonacci number further on in the sequence
         throw new Error('Skipping forward is not yet supported!');
     }
+
+    current(value) {
+        // Returns the current value in the Fibonacci sequence
+        throw new Error('Current value not yet supported');
+    }
 }
 
 module.exports = Fibonacci;
